@@ -1,4 +1,5 @@
-﻿namespace ClasificadorSH
+﻿using ClasificadorSH.Controller;
+namespace ClasificadorSH
 {
     partial class Form1
     {
@@ -28,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            ControllerC controlador = new ControllerC();
             this.textBoxBusq = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -41,7 +43,7 @@
             this.textBoxBusq.Name = "textBoxBusq";
             this.textBoxBusq.Size = new System.Drawing.Size(127, 20);
             this.textBoxBusq.TabIndex = 1;
-            this.textBoxBusq.TextChanged += new System.EventHandler(this.busqueda);
+            this.textBoxBusq.TextChanged += new System.EventHandler(controlador.busqueda(textBoxBusq.Text));
             // 
             // label1
             // 
@@ -79,7 +81,7 @@
             this.Controls.Add(this.textBoxBusq);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+           // this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

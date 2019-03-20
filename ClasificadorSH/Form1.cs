@@ -1,4 +1,4 @@
-﻿using ClasificadorSH.Model;
+﻿using ClasificadorSH.Controller;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,35 +8,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClasificadorSH.Controller;
 
 namespace ClasificadorSH
 {
     public partial class Form1 : Form
     {
         public Form1()
-        {
+        {            
             InitializeComponent();
-            
-           
 
 
+            ControllerC controlador = new ControllerC();
+            controlador.creaLista();
+ 
         }
 
-       
-        private void Form1_Load(object sender, EventArgs e)
-        {
 
-        }
-        public string super { get; set; }
-        public string info { get; set; }
-        private void busqueda(object sender, EventArgs e)
-        {
-            super = textBoxBusq.Text;
+        /* private void Form1_Load(object sender, EventArgs e,)
+         {
 
-            info = listaSuperheroes.FindAll(super);
+         }
+   
+        
+        /* private void busqueda(object sender, EventArgs e)
+         {
+
+
+             info = listaSuperheroes.FindAll(textBoxBusq.Text);
           
-        }
+         }
+          */
 
-      
     }
 }
