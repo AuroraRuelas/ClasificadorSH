@@ -16,13 +16,13 @@ namespace ClasificadorSH
     public partial class Form1 : Form
     {
         public Form1()
-        {            
+        {
             InitializeComponent();
 
 
-           // SuperheroeController controlador = new SuperheroeController();
+            // SuperheroeController controlador = new SuperheroeController();
             SuperheroeController.creaLista();
- 
+
         }
 
 
@@ -32,34 +32,64 @@ namespace ClasificadorSH
          }
    
         */
-   
+
 
         private void textBoxBusq_TextChanged(object sender, EventArgs e)
-        {
-          
-        }
-
-        private void textBoxBusq_KeyPress(object sender, KeyPressEventArgs e)
         {
             try
             {
                 List<SuperheroeModel> listado = SuperheroeController.getModelsByNombre(textBoxBusq.Text);
 
-                foreach (SuperheroeModel a in listado)
+
+                if (listado.Any())
                 {
-                    System.Diagnostics.Debug.WriteLine(a.nombre.ToString());
+                    foreach (SuperheroeModel a in listado)
+                    {
+                        textBoxInfo.Text = a.nombre + ": " + a.desc;
+                        pictureSuper.Name = a.img;
+                        //Console.WriteLine(a.nombre);
+                        //Console.WriteLine(pictureSuper.Name);
+                        switch (a.nombre.ToUpper())
+                        {
+                            case "IRON-MAN":
+                                pictureSuper.Image = global::ClasificadorSH.Properties.Resources.ironman;
+                                 
+                                    break;
+
+                            case "SUPERMAN":
+                                 pictureSuper.Image = global::ClasificadorSH.Properties.Resources.superman;
+   
+                                 break;
+
+                            case "SPIDERMAN":
+                                 pictureSuper.Image = global::ClasificadorSH.Properties.Resources.spiderman1;
+  
+                                 break;
+                            case "CYCLOPS":
+                                 pictureSuper.Image = global::ClasificadorSH.Properties.Resources.cyclops;
+ 
+                                 break;
+
+                        }
+                       
+                     
+                    }
+
                 }
-
-
+                else
+                {
+                    this.textBoxInfo.Text = "No se encontró nada";
+                }
+                
 
 
             }
             catch (Exception)
             {
-
+                Console.WriteLine("Superheroe no encontrado");
             }
         }
-          
 
     }
+    
 }

@@ -65,6 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -79,7 +80,30 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Source\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ironman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spiderman.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\superman.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\superman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spiderman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spiderman1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cyclops.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

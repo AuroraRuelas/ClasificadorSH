@@ -29,59 +29,73 @@ namespace ClasificadorSH
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.textBoxBusq = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.labelSuper = new System.Windows.Forms.Label();
+            this.textBoxInfo = new System.Windows.Forms.TextBox();
+            this.pictureSuper = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSuper)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxBusq
             // 
-            this.textBoxBusq.Location = new System.Drawing.Point(108, 41);
+            this.textBoxBusq.Font = new System.Drawing.Font("Book Antiqua", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxBusq.Location = new System.Drawing.Point(292, 41);
             this.textBoxBusq.Name = "textBoxBusq";
-            this.textBoxBusq.Size = new System.Drawing.Size(127, 20);
+            this.textBoxBusq.Size = new System.Drawing.Size(186, 21);
             this.textBoxBusq.TabIndex = 1;
             this.textBoxBusq.TextChanged += new System.EventHandler(this.textBoxBusq_TextChanged);
-            this.textBoxBusq.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxBusq_KeyPress);
             // 
-            // label1
+            // labelSuper
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(96, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(179, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Introduce un nombre de superheroe:";
+            this.labelSuper.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelSuper.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSuper.Location = new System.Drawing.Point(12, 39);
+            this.labelSuper.Name = "labelSuper";
+            this.labelSuper.Size = new System.Drawing.Size(271, 22);
+            this.labelSuper.TabIndex = 2;
+            this.labelSuper.Text = "Introduce un nombre de superheroe:";
             // 
-            // pictureBox1
+            // textBoxInfo
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(13, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(77, 74);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.textBoxInfo.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.textBoxInfo.Enabled = false;
+            this.textBoxInfo.Font = new System.Drawing.Font("Book Antiqua", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxInfo.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxInfo.Location = new System.Drawing.Point(240, 112);
+            this.textBoxInfo.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
+            this.textBoxInfo.Multiline = true;
+            this.textBoxInfo.Name = "textBoxInfo";
+            this.textBoxInfo.ReadOnly = true;
+            this.textBoxInfo.Size = new System.Drawing.Size(270, 245);
+            this.textBoxInfo.TabIndex = 4;
             // 
-            // textBox1
+            // pictureSuper
             // 
-            this.textBox1.Location = new System.Drawing.Point(20, 149);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(236, 90);
-            this.textBox1.TabIndex = 4;
+
+            this.pictureSuper.Location = new System.Drawing.Point(12, 112);
+            this.pictureSuper.Name = "pictureSuper";
+            this.pictureSuper.Size = new System.Drawing.Size(204, 245);
+            this.pictureSuper.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureSuper.TabIndex = 3;
+            this.pictureSuper.TabStop = false;
+            this.pictureSuper.Visible = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label1);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(525, 441);
+            this.Controls.Add(this.textBoxInfo);
+            this.Controls.Add(this.pictureSuper);
+            this.Controls.Add(this.labelSuper);
             this.Controls.Add(this.textBoxBusq);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Text = "Buscador de Superheroes";
+            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSuper)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -90,9 +104,9 @@ namespace ClasificadorSH
         #endregion
 
         private System.Windows.Forms.TextBox textBoxBusq;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label labelSuper;
+        private System.Windows.Forms.PictureBox pictureSuper;
+        private System.Windows.Forms.TextBox textBoxInfo;
 
     }
 }
