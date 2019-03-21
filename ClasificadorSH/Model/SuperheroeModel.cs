@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace ClasificadorSH.Model
 {
-    public class Superheroe
+    public class SuperheroeModel
     {
         public string nombre { get; set; }
         public string img { get; set; }
         public string desc { get; set; }
 
-        public Superheroe(string nombre,string img, string desc)
+        public SuperheroeModel(string nombre,string img, string desc)
         {
             this.nombre = nombre;
             this.img = img;

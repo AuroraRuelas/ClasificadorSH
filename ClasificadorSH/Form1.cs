@@ -1,4 +1,5 @@
 ﻿using ClasificadorSH.Controller;
+using ClasificadorSH.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ClasificadorSH.Controller;
+
 
 namespace ClasificadorSH
 {
@@ -19,8 +20,8 @@ namespace ClasificadorSH
             InitializeComponent();
 
 
-            ControllerC controlador = new ControllerC();
-            controlador.creaLista();
+           // SuperheroeController controlador = new SuperheroeController();
+            SuperheroeController.creaLista();
  
         }
 
@@ -30,15 +31,35 @@ namespace ClasificadorSH
 
          }
    
-        
-        /* private void busqueda(object sender, EventArgs e)
-         {
+        */
+   
 
-
-             info = listaSuperheroes.FindAll(textBoxBusq.Text);
+        private void textBoxBusq_TextChanged(object sender, EventArgs e)
+        {
           
-         }
-          */
+        }
+
+        private void textBoxBusq_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                List<SuperheroeModel> listado = SuperheroeController.getModelsByNombre(textBoxBusq.Text);
+
+                foreach (SuperheroeModel a in listado)
+                {
+                    System.Diagnostics.Debug.WriteLine(a.nombre.ToString());
+                }
+
+
+
+
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+          
 
     }
 }
