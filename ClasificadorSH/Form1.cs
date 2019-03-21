@@ -69,6 +69,11 @@ namespace ClasificadorSH
                                  pictureSuper.Image = global::ClasificadorSH.Properties.Resources.cyclops;
  
                                  break;
+                            case "MYSTIQUE":
+                                 pictureSuper.Image = global::ClasificadorSH.Properties.Resources.mystique;
+
+                                 break;
+
 
                         }
                        

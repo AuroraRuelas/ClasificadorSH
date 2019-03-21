@@ -1,5 +1,4 @@
 ﻿using ClasificadorSH.Model;
-//using ClasificadorSH.Form1;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +19,7 @@ namespace ClasificadorSH.Controller
             listado.Add(new SuperheroeModel("Superman", "pathimg2", "EL más guapo"));
             listado.Add(new SuperheroeModel("Spiderman", "pathimg3", "Superheroe ubicado en queens "));
             listado.Add(new SuperheroeModel("Cyclops", "pathimg4", "Pertenece al equipo X-Men, lanza rayos por los ojos"));
-            listado.Add(new SuperheroeModel("Mystic", "pathimg6", "Ex miembro del equipo X-Men ahora villana aliada con Matgento"));
+            listado.Add(new SuperheroeModel("Mystique", "pathimg6", "Ex miembro del equipo X-Men ahora villana aliada con Matgento"));
             //busqueda(listaSuperheroes);
             return listado;
         
@@ -29,7 +28,7 @@ namespace ClasificadorSH.Controller
         public static List<SuperheroeModel> getModelsByNombre(string filter)
         {
             return SuperheroeController.listado.Where(c => c.nombre.ToUpper().Equals(filter.ToUpper())).ToList<SuperheroeModel>();
-            //return SuperheroeController.listado.Where(c => c.nombre.Contains(filter)).ToList<SuperheroeModel>();
+           
             
         }
             
