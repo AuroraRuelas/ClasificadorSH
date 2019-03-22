@@ -47,35 +47,7 @@ namespace ClasificadorSH
                     {
                         textBoxInfo.Text = a.nombre + ": " + a.desc;
                         pictureSuper.Name = a.img;
-                        //Console.WriteLine(a.nombre);
-                        //Console.WriteLine(pictureSuper.Name);
-                        switch (a.nombre.ToUpper())
-                        {
-                            case "IRON-MAN":
-                                pictureSuper.Image = global::ClasificadorSH.Properties.Resources.ironman;
-                                 
-                                    break;
-
-                            case "SUPERMAN":
-                                 pictureSuper.Image = global::ClasificadorSH.Properties.Resources.superman;
-   
-                                 break;
-
-                            case "SPIDERMAN":
-                                 pictureSuper.Image = global::ClasificadorSH.Properties.Resources.spiderman1;
-  
-                                 break;
-                            case "CYCLOPS":
-                                 pictureSuper.Image = global::ClasificadorSH.Properties.Resources.cyclops;
- 
-                                 break;
-                            case "MYSTIQUE":
-                                 pictureSuper.Image = global::ClasificadorSH.Properties.Resources.mystique;
-
-                                 break;
-
-
-                        }
+                        pictureSuper.Image = SuperheroeController.getImageByName(a.nombre.ToUpper());
                        
                      
                     }

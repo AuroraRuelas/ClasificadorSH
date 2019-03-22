@@ -1,4 +1,4 @@
-﻿using ClasificadorSH.Controller;
+﻿
 namespace ClasificadorSH
 {
     partial class Form1
@@ -105,7 +105,7 @@ namespace ClasificadorSH
 
         private System.Windows.Forms.TextBox textBoxBusq;
         private System.Windows.Forms.Label labelSuper;
-        private System.Windows.Forms.PictureBox pictureSuper;
+        public System.Windows.Forms.PictureBox pictureSuper;
         private System.Windows.Forms.TextBox textBoxInfo;
 
     }

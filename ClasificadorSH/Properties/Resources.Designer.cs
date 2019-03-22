@@ -93,9 +93,9 @@ namespace ClasificadorSH.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap spiderman {
+        internal static System.Drawing.Bitmap no_image_available {
             get {
-                object obj = ResourceManager.GetObject("spiderman", resourceCulture);
+                object obj = ResourceManager.GetObject("no_image_available", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
