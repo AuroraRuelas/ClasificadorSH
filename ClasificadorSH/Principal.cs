@@ -87,22 +87,23 @@ namespace ClasificadorSH
                     {
 
                         SuperheroeModel model = SuperheroeController.getModelsByNombre(a.nombre.ToUpper()).First();
-                        Console.Write(model.nombre);
+                        Console.Write("nombre desde el modelo: "+ model.nombre);
 
                         if (!(model.Equals(null)))
                         {
                             SuperheroeView superHView = new SuperheroeView();
                             //Agregar cambio a SuperheroeView 
                             Console.Write("Entra if");
-                            //NO FUNCIONA
-                           superHView.SuperheroeViewInfo(model);
+                            //NO FUNCIONA !!!!!!!!!!!!
+                            superHView.SuperheroeViewInfo(model);
                             panel1.Visible = false;   
                             superheroeViewCard.Visible = true;
-                            Console.Write(superheroeViewCard.Visible);
+                            Console.Write("Visibilidad de SuperheroeView : "+superheroeViewCard.Visible);
                         }
                         else
                         {
                             model = null;
+                            MessageBox.Show("SuperHeroe no encontrado");
 
                         }
                       

@@ -79,7 +79,7 @@ namespace ClasificadorSH.Controller
 
 
             }
-            if (bitmap==null)
+            if (bitmap==null && superheroeABuscar==null)
             {
                 bitmap = global::ClasificadorSH.Properties.Resources.no_image_available;
            }
