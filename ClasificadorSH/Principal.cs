@@ -59,6 +59,10 @@ namespace ClasificadorSH
 
         }
 
+        private void bottonfav_Click()
+        {
+
+        }
         private void remove_Click(object sender, EventArgs e)
         {
             foreach (ListViewItem listaFav in listView1.SelectedItems)
@@ -94,10 +98,18 @@ namespace ClasificadorSH
                             SuperheroeView superHView = new SuperheroeView();
                             //Agregar cambio a SuperheroeView 
                             Console.Write("Entra if");
-                            //NO FUNCIONA !!!!!!!!!!!!
+                           
                             superHView.SuperheroeViewInfo(model);
-                            panel1.Visible = false;   
+                           // panel1.Visible = false;
+                            //NO FUNCIONA !!!!!!!!!!!!
+                            //panel2.Visible = true; ///
+                            //////////////////////////
                             superheroeViewCard.Visible = true;
+                            superheroeViewCard.pictureBox1.Image = SuperheroeController.getImageByName(model.nombre.ToUpper());
+                            superheroeViewCard.pictureSuper.Image = SuperheroeController.getImageByName(model.nombre.ToUpper());
+                            superheroeViewCard.nombrePersonaje.Text = model.nombre;
+                            superheroeViewCard.textBoxHistoria.Text = model.desc;
+                            superheroeViewCard.richTextBoxFunFacts.Text = model.desc;
                             Console.Write("Visibilidad de SuperheroeView : "+superheroeViewCard.Visible);
                         }
                         else
@@ -124,12 +136,14 @@ namespace ClasificadorSH
             }
         }
 
+        
+
 
     }
     
 }
 
-class RoundedButton : Button
+public class RoundedButton : Button
 {
     GraphicsPath GetRoundPath(RectangleF Rect, int radius)
     {

@@ -37,6 +37,7 @@ namespace ClasificadorSH
             this.textBoxBusq = new System.Windows.Forms.TextBox();
             this.labelSuper = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.superheroeViewCard = new ClasificadorSH.Views.SuperheroeView();
             this.removeAll = new System.Windows.Forms.Button();
             this.remove = new System.Windows.Forms.Button();
@@ -45,6 +46,7 @@ namespace ClasificadorSH
             this.personajesFav = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.find = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxBusq
@@ -69,7 +71,7 @@ namespace ClasificadorSH
             // panel1
             // 
             this.panel1.AutoSize = true;
-            this.panel1.Controls.Add(this.superheroeViewCard);
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.removeAll);
             this.panel1.Controls.Add(this.remove);
             this.panel1.Controls.Add(this.listView1);
@@ -82,13 +84,22 @@ namespace ClasificadorSH
             this.panel1.Size = new System.Drawing.Size(1603, 884);
             this.panel1.TabIndex = 5;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.superheroeViewCard);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 306);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1603, 578);
+            this.panel2.TabIndex = 13;
+            // 
             // superheroeViewCard
             // 
             this.superheroeViewCard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.superheroeViewCard.Location = new System.Drawing.Point(58, 351);
+            this.superheroeViewCard.Location = new System.Drawing.Point(92, 3);
             this.superheroeViewCard.Name = "superheroeViewCard";
-            this.superheroeViewCard.Size = new System.Drawing.Size(923, 493);
-            this.superheroeViewCard.TabIndex = 13;
+            this.superheroeViewCard.Size = new System.Drawing.Size(1360, 878);
+            this.superheroeViewCard.TabIndex = 0;
             // 
             // removeAll
             // 
@@ -163,6 +174,7 @@ namespace ClasificadorSH
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,6 +191,7 @@ namespace ClasificadorSH
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader rad;
         private System.Windows.Forms.ColumnHeader personajesFav;
+        private System.Windows.Forms.Panel panel2;
         private Views.SuperheroeView superheroeViewCard;
 
     }
