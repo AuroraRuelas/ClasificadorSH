@@ -153,6 +153,16 @@ namespace ClasificadorSH.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap stra {
+            get {
+                object obj = ResourceManager.GetObject("stra", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap superman {
             get {
                 object obj = ResourceManager.GetObject("superman", resourceCulture);

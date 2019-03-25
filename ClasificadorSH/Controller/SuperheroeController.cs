@@ -33,6 +33,10 @@ namespace ClasificadorSH.Controller
            
             
         }
+        public static string[] getListNombres()
+        {
+            return SuperheroeController.listado.Select(a => a.nombre).ToArray();
+        }
 
 
         public static Bitmap getImageByName(string superheroeABuscar)

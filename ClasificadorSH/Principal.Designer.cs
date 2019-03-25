@@ -43,6 +43,8 @@ namespace ClasificadorSH
             this.rad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.personajesFav = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.find = new System.Windows.Forms.Button();
+            this.superheroeViewCard = new ClasificadorSH.Views.SuperheroeView();
+            this.bottonFav = new RoundedButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +69,9 @@ namespace ClasificadorSH
             // 
             // panel1
             // 
+            this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.superheroeViewCard);
+            this.panel1.Controls.Add(this.bottonFav);
             this.panel1.Controls.Add(this.removeAll);
             this.panel1.Controls.Add(this.remove);
             this.panel1.Controls.Add(this.listView1);
@@ -101,9 +106,12 @@ namespace ClasificadorSH
             // 
             // listView1
             // 
+            this.listView1.CheckBoxes = true;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.rad,
             this.personajesFav});
+            listViewItem1.StateImageIndex = 0;
+            listViewItem2.StateImageIndex = 0;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1,
             listViewItem2});
@@ -112,9 +120,7 @@ namespace ClasificadorSH
             this.listView1.Size = new System.Drawing.Size(835, 383);
             this.listView1.TabIndex = 9;
             this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.CheckBoxes = true;
             this.listView1.View = System.Windows.Forms.View.Details;
-            
             // 
             // rad
             // 
@@ -137,6 +143,28 @@ namespace ClasificadorSH
             this.find.UseVisualStyleBackColor = true;
             this.find.Click += new System.EventHandler(this.find_Click);
             // 
+            // superheroeViewCard
+            // 
+            this.superheroeViewCard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.superheroeViewCard.Location = new System.Drawing.Point(530, 326);
+            this.superheroeViewCard.Name = "superheroeViewCard";
+            this.superheroeViewCard.Size = new System.Drawing.Size(1073, 558);
+            this.superheroeViewCard.TabIndex = 13;
+            // 
+            // bottonFav
+            // 
+            this.bottonFav.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.bottonFav.BackgroundImage = global::ClasificadorSH.Properties.Resources.stra;
+            this.bottonFav.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bottonFav.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bottonFav.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.bottonFav.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.bottonFav.Location = new System.Drawing.Point(1261, 240);
+            this.bottonFav.Name = "bottonFav";
+            this.bottonFav.Size = new System.Drawing.Size(58, 53);
+            this.bottonFav.TabIndex = 12;
+            this.bottonFav.UseVisualStyleBackColor = false;
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -152,6 +180,7 @@ namespace ClasificadorSH
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -166,6 +195,8 @@ namespace ClasificadorSH
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader rad;
         private System.Windows.Forms.ColumnHeader personajesFav;
+        private RoundedButton bottonFav;
+        private Views.SuperheroeView superheroeViewCard;
 
     }
 }
