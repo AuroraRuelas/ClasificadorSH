@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using ClasificadorSH.Model;
 using ClasificadorSH.Controller;
 using System.Drawing.Drawing2D;
+
 namespace ClasificadorSH.Views
 {
     public partial class SuperheroeView : UserControl
@@ -19,6 +20,7 @@ namespace ClasificadorSH.Views
             InitializeComponent();
            
           // this.nombrePersonaje.Text = "HOLA QUE TAL";
+            this.nombrePersonaje.BackColor= Color.FromArgb(255, 51, 51);
         }
 
         public void SuperheroeViewInfo(SuperheroeModel model)
@@ -28,9 +30,11 @@ namespace ClasificadorSH.Views
             Console.Write(model.nombre + " " + model.desc);
             this.pictureSuper.Image = SuperheroeController.getImageByName(model.nombre.ToUpper());
            //Cambiar este por otro metodo o cambiar el metodo getImageByName() para que regrese 2 bitmaps (uno de la imagen del personaje y otro de la carta de presentación)
-           this.pictureBox1.Image = SuperheroeController.getImageByName(model.nombre.ToUpper());
+           this.pictureSuperCard.Image = SuperheroeController.getImageByName(model.nombre.ToUpper());
             this.textBoxHistoria.Text = model.desc;
             this.richTextBoxFunFacts.Text = model.desc;
         }
+
+       
     }
 }

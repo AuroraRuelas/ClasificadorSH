@@ -23,13 +23,14 @@ namespace ClasificadorSH
            
 
             SuperheroeController.creaLista();
+            gradientPanelB2.SendToBack();
+            gradientPanelB1.BringToFront();
+            gradientPanelB1.BackColor = Color.FromArgb(179, 0, 0);
+            gradientPanelB2.Visible = false;
            
         }
-        void bottonFav_Click(Object sender, System.EventArgs e)
-        {
-           
-        }
-
+        
+     
        private void Form1_Load(object sender, EventArgs e)
          {
            
@@ -37,44 +38,23 @@ namespace ClasificadorSH
          }
    
               
+        private void bottonFav_Method(object sender, EventArgs e)
+        {
+            listFav.Items.Add(superheroeViewCard.nombrePersonaje.Text);
+        }
        
-
-        private void textBoxBusq_TextChanged(object sender, EventArgs e)
-        {
-            this.textBoxBusq.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            this.textBoxBusq.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            TextBox t = sender as TextBox;
-            if (t != null)
-            {
-                if (t.Text.Length >= 2)
-                {
-                   
-                   // string[] arr = SuperheroeController.getListNombres();
-
-                    AutoCompleteStringCollection collectionNombres = new AutoCompleteStringCollection();
-                    collectionNombres.AddRange(SuperheroeController.getListNombres());
-                    this.textBoxBusq.AutoCompleteCustomSource = collectionNombres;
-                }
-            }
-
-        }
-
-        private void bottonfav_Click()
-        {
-
-        }
         private void remove_Click(object sender, EventArgs e)
         {
-            foreach (ListViewItem listaFav in listView1.SelectedItems)
+            foreach (ListViewItem listaFavo in listFav.SelectedItems)
 	        {
-                listaFav.Remove();
+                listaFavo.Remove();
 	        }
        
         }
 
         private void removeAll_Click(object sender, EventArgs e)
         {
-            listView1.Items.Clear();
+            listFav.Items.Clear();
         }
 
         private void find_Click(object sender, EventArgs e)
@@ -91,26 +71,24 @@ namespace ClasificadorSH
                     {
 
                         SuperheroeModel model = SuperheroeController.getModelsByNombre(a.nombre.ToUpper()).First();
-                        Console.Write("nombre desde el modelo: "+ model.nombre);
+                        //Console.Write("nombre desde el modelo: "+ model.nombre);
 
                         if (!(model.Equals(null)))
                         {
                             SuperheroeView superHView = new SuperheroeView();
                             //Agregar cambio a SuperheroeView 
-                            Console.Write("Entra if");
+                            //Console.Write("Entra if");
                            
                             superHView.SuperheroeViewInfo(model);
-                           // panel1.Visible = false;
-                            //NO FUNCIONA !!!!!!!!!!!!
-                            //panel2.Visible = true; ///
-                            //////////////////////////
-                            superheroeViewCard.Visible = true;
-                            superheroeViewCard.pictureBox1.Image = SuperheroeController.getImageByName(model.nombre.ToUpper());
+                            gradientPanelB1.Visible = false;
+                            gradientPanelB2.Visible = true;
+                            superheroeViewCard.pictureSuperCard.Image = SuperheroeController.getImageByName(model.nombre.ToUpper());
                             superheroeViewCard.pictureSuper.Image = SuperheroeController.getImageByName(model.nombre.ToUpper());
                             superheroeViewCard.nombrePersonaje.Text = model.nombre;
                             superheroeViewCard.textBoxHistoria.Text = model.desc;
                             superheroeViewCard.richTextBoxFunFacts.Text = model.desc;
-                            Console.Write("Visibilidad de SuperheroeView : "+superheroeViewCard.Visible);
+                           // Console.Write("Visibilidad de SuperheroeView : "+superheroeViewCard.Visible);
+                            
                         }
                         else
                         {
@@ -134,6 +112,28 @@ namespace ClasificadorSH
             {
                 Console.WriteLine("Superheroe no encontrado");
             }
+        }
+
+       
+
+        private void textBoxBusq_KeyUp(object sender, KeyEventArgs e)
+        {
+            this.textBoxBusq.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            this.textBoxBusq.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            TextBox t = sender as TextBox;
+            if (t != null)
+            {
+                if (t.Text.Length >= 1)
+                {
+
+                    // string[] arr = SuperheroeController.getListNombres();
+
+                    AutoCompleteStringCollection collectionNombres = new AutoCompleteStringCollection();
+                    collectionNombres.AddRange(SuperheroeController.getListNombres());
+                    this.textBoxBusq.AutoCompleteCustomSource = collectionNombres;
+                }
+            }
+
         }
 
         

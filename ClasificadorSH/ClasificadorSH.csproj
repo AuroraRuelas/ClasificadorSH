@@ -55,6 +55,9 @@
     <Compile Include="Model\SuperheroeModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\GradientPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Views\SuperheroeView.cs">
       <SubType>UserControl</SubType>
     </Compile>
